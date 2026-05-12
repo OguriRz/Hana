@@ -1,0 +1,1750 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Hana Association Network</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:"Trebuchet MS", sans-serif;
+
+    background:
+    linear-gradient(to bottom,
+    #ffffff 0%,
+    #f3f3f3 40%,  
+    #dcdcdc 100%);
+
+    color:#111;
+    overflow-x:hidden;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+header{
+
+    background:
+    linear-gradient(to bottom,
+    rgba(255,255,255,0.98),
+    rgba(235,235,235,0.95));
+
+    border-bottom:1px solid rgba(0,0,0,0.08);
+
+    padding:45px 20px 30px;
+
+    text-align:center;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.hana-logo{
+
+    width:120px;
+    height:120px;
+
+    object-fit:contain;
+
+    margin-bottom:18px;
+
+    filter:
+    drop-shadow(0 0 8px rgba(0,0,0,0.15));
+}
+
+/*
+
+CAMBIAR LOGO:
+
+src="TU-LOGO.png"
+
+*/
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+h1{
+
+    margin:0;
+
+    font-size:38px;
+
+    letter-spacing:6px;
+
+    font-weight:900;
+
+    color:#111;
+}
+
+.linea{
+
+    width:420px;
+    height:1px;
+
+    background:
+    linear-gradient(to right,
+    transparent,
+    rgba(0,0,0,0.4),
+    transparent);
+
+    margin:22px auto;
+}
+
+.frase{
+
+    color:#444;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+}
+
+/* ========================= */
+/* BOTONES */
+/* ========================= */
+
+.network-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.network-btn{
+
+    padding:12px 22px;
+
+    border:1px solid rgba(0,0,0,0.15);
+
+    background:
+    linear-gradient(to bottom,
+    #ffffff,
+    #dcdcdc);
+
+    color:#111;
+
+    cursor:pointer;
+
+    letter-spacing:2px;
+
+    font-size:12px;
+
+    transition:0.3s;
+}
+
+.network-btn:hover{
+
+    transform:translateY(-3px);
+
+    background:
+    linear-gradient(to bottom,
+    #ffffff,
+    #cfcfcf);
+
+    box-shadow:
+    0 0 12px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* CONTENEDOR */
+/* ========================= */
+
+.container{
+
+    width:92%;
+    max-width:1450px;
+
+    margin:auto;
+
+    padding-top:70px;
+    padding-bottom:120px;
+}
+
+/* ========================= */
+/* RANGOS */
+/* ========================= */
+
+.rango{
+    margin-bottom:90px;
+}
+
+.rango h2{
+
+    color:#111;
+
+    font-size:30px;
+
+    letter-spacing:5px;
+
+    margin-bottom:12px;
+}
+
+.rango-line{
+
+    width:100%;
+    height:1px;
+
+    background:
+    linear-gradient(to right,
+    rgba(0,0,0,0.3),
+    transparent);
+
+    margin-bottom:28px;
+}
+
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.misiones{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:24px;
+}
+
+/* ========================= */
+/* TARJETAS */
+/* ========================= */
+
+.mision{
+
+    background:
+    linear-gradient(to bottom,
+    rgba(255,255,255,0.98),
+    rgba(225,225,225,0.95));
+
+    border:1px solid rgba(0,0,0,0.08);
+
+    overflow:hidden;
+
+    transition:0.3s;
+}
+
+.mision:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 15px rgba(0,0,0,0.08);
+}
+
+/* ========================= */
+/* IMAGEN */
+/* ========================= */
+
+.imagen{
+
+    width:100%;
+    height:150px;
+
+    background:
+    linear-gradient(135deg,
+    #777,
+    #2a2a2a);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#ddd;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+}
+
+/* ========================= */
+/* CONTENIDO */
+/* ========================= */
+
+.contenido{
+    padding:20px;
+}
+
+.mision h3{
+
+    margin-top:0;
+
+    font-size:20px;
+
+    letter-spacing:1px;
+
+    color:#111;
+}
+
+.paga{
+
+    margin-top:10px;
+    margin-bottom:14px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#222;
+}
+
+.descripcion{
+
+    color:#444;
+
+    line-height:1.5;
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+/* ========================= */
+/* INFO */
+/* ========================= */
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+}
+
+.rank{
+
+    background:#111;
+
+    color:white;
+
+    padding:5px 10px;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.estado{
+
+    color:#555;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+/* ========================= */
+/* BOTON */
+/* ========================= */
+
+.boton{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    background:
+    linear-gradient(to right,
+    #111,
+    #333);
+
+    color:white;
+
+    letter-spacing:2px;
+
+    font-size:11px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.boton:hover{
+
+    background:
+    linear-gradient(to right,
+    #000,
+    #444);
+
+    letter-spacing:3px;
+}
+
+.boton.bloqueado{
+
+    background:#777;
+
+    cursor:not-allowed;
+
+    opacity:0.7;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:700px){
+
+    h1{
+        font-size:28px;
+    }
+
+    .linea{
+        width:80%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<!-- LOGO -->
+
+<img class="hana-logo"
+src="https://limbuscompany.wiki.gg/images/Hana_Logo.png?d142ca">
+
+<h1>HANA ASSOCIATION NETWORK</h1>
+
+<div class="linea"></div>
+
+<div class="frase">
+“Distribución oficial de Solicitudes y Misiones.”
+</div>
+
+<div class="linea"></div>
+
+<!-- BOTONES -->
+
+<button class="network-btn"
+onclick="window.location.href='https://ogurirz.github.io/Liu-Misiones/'">
+🔥 LIU
+</button>
+
+<button class="network-btn"
+onclick="window.location.href='https://ogurirz.github.io/Thumb-Misiones/'">
+🩸 THUMB
+</button>
+
+<button class="network-btn"
+onclick="window.location.href='https://ogurirz.github.io/Index-Misiones/'">
+📜 INDEX
+</button>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<!-- ====================================================== -->
+<!-- RUMOR -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>RUMOR</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<!-- ========= MISIÓN 1 ========= -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://pestraker.shop/wp-content/uploads/2022/06/control-de-ratas.jpg');
+background-size:cover;
+background-position:center;
+">
+</div>
+
+<div class="contenido">
+
+<h3>
+Ratas 
+</h3>
+
+<div class="paga">
+2.000 Ahns
+</div>
+
+<div class="descripcion">
+
+Unas Ratas En O Corp Estan Causando Problemas 
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+RUMOR
+</div>
+
+<div class="estado">
+ABIERTO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<!-- ========= MISIÓN 2 ========= -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+Pandilleros Ting Tang
+</h3>
+
+<div class="paga">
+10.000 Ahns
+</div>
+
+<div class="descripcion">
+
+Estos Individuos en las Callejuelas de J Corp estan causando problemas, es el mejor momento para acabarlos ya que su jefe no se encuentra
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+RUMOR
+</div>
+
+<div class="estado">
+Abierto
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<!-- ========= MISIÓN 3 ========= -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+Axe Gang
+</h3>
+
+<div class="paga">
+65.000 Ahns
+</div>
+
+<div class="descripcion">
+
+Esta banda esta ganando mas terreno en las callejuelas de L / N / W Corp, encarguense antes de que sigan expandiendose
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+RUMOR - MITO URBANO
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<!-- ========= MISIÓN 4 ========= -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://images.steamusercontent.com/ugc/2312097413006329998/50263D2B47806108D196346455451F8AA7CD29BB/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+Twin Hooks
+</h3>
+
+<div class="paga">
+40.000 Ahns por cada Twin Hook Eliminado
+</div>
+
+<div class="descripcion">
+
+Estos Piratas de U Corp parece que se duplican cada segundo, son una plaga que debe ser exterminada cuanto antes
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+RUMOR
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ====================================================== -->
+<!-- MITO URBANO -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>MITO URBANO</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<!-- COPIAR/PEGAR MISIONES -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://static.wikia.nocookie.net/library-of-ruina/images/2/21/Pierre%27sBistroIcon.png/revision/latest/scale-to-width-down/142?cb=20240604021525');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+Canibales
+</h3>
+
+<div class="paga">
+225.000 Ahns
+</div>
+
+<div class="descripcion">
+
+Canibales en las Callejuelas de W corp andan secuestrando gente para volverla en sus platillos
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+MITO
+</div>
+
+<div class="estado">
+ABIERTO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+Cadenas Oxidadas
+</h3>
+
+<div class="paga">
+300.000 Ahns
+</div>
+
+<div class="descripcion">
+
+Este Grupo de Sindicalistas Estan Causando Estragos en I Corp, Encarguense de ponerlos en su lugar
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+MITO
+</div>
+
+<div class="estado">
+ABIERTO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+MITO
+</div>
+
+<div class="estado">
+ABIERTO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+MITO
+</div>
+
+<div class="estado">
+CLASIFICADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ====================================================== -->
+<!-- LEYENDA -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>LEYENDA URBANA</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<!-- PUEDES COPIAR Y PEGAR MÁS -->
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+  
+LEYENDA
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+LEYENDA
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+LEYENDA
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+LEYENDA
+</div>
+
+<div class="estado">
+URGENTE
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PLAGA -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>PLAGA URBANA</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PLAGA
+</div>
+
+<div class="estado">
+SELLADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PLAGA
+</div>
+
+<div class="estado">
+SELLADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PLAGA
+</div>
+
+<div class="estado">
+SELLADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PLAGA
+</div>
+
+<div class="estado">
+SELLADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ====================================================== -->
+<!-- PESADILLA -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>PESADILLA URBANA</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PESADILLA
+</div>
+
+<div class="estado">
+CLASIFICADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PESADILLA
+</div>
+
+<div class="estado">
+CLASIFICADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PESADILLA
+</div>
+
+<div class="estado">
+CLASIFICADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+PESADILLA
+</div>
+
+<div class="estado">
+CLASIFICADO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  
+</div>
+</section>
+
+<!-- ====================================================== -->
+<!-- ESTRELLA -->
+<!-- ====================================================== -->
+
+<section class="rango">
+
+<h2>ESTRELLA DE LA CIUDAD</h2>
+
+<div class="rango-line"></div>
+
+<div class="misiones">
+
+<div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+ESTRELLA
+</div>
+
+<div class="estado">
+RESTRINGIDO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+ESTRELLA
+</div>
+
+<div class="estado">
+RESTRINGIDO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+ESTRELLA
+</div>
+
+<div class="estado">
+RESTRINGIDO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+  <div class="mision">
+
+<div class="imagen"
+
+style="
+background-image:url('IMAGEN-AQUI.png');
+background-size:cover;
+background-position:center;
+">
+
+</div>
+
+<div class="contenido">
+
+<h3>
+En Proceso
+</h3>
+
+<div class="paga">
+En Proceso
+</div>
+
+<div class="descripcion">
+
+En Proceso
+
+</div>
+
+<div class="info">
+
+<div class="rank">
+ESTRELLA
+</div>
+
+<div class="estado">
+RESTRINGIDO
+</div>
+
+</div>
+
+<button class="boton"
+onclick="tomarMision(this)">
+TOMAR MISIÓN
+</button>
+
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+
+<script>
+
+function tomarMision(btn){
+
+    btn.innerText = "MISIÓN TOMADA";
+
+    btn.classList.add("bloqueado");
+
+    btn.disabled = true;
+
+}
+
+</script>
+</script>
+
+<!-- PEGAS LA MUSICA ACA -->
+
+<iframe id="musicPlayer"
+width="0"
+height="0"
+src=""
+frameborder="0"
+allow="autoplay">
+</iframe>
+
+<script>
+
+let musicaIniciada = false;
+
+document.addEventListener("click", () => {
+
+    if (!musicaIniciada) {
+
+        document.getElementById("musicPlayer").src =
+        "https://www.youtube.com/embed/eXyNitTVHxg?autoplay=1&loop=1&playlist=eXyNitTVHxg";
+
+        musicaIniciada = true;
+    }
+
+});
+
+</script>
+
+</body>
+</html>
+
