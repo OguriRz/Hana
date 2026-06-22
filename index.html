@@ -1,1750 +1,1791 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Hana Association Network</title>
-
-<style>
-
-body{
-    margin:0;
-    font-family:"Trebuchet MS", sans-serif;
-
-    background:
-    linear-gradient(to bottom,
-    #ffffff 0%,
-    #f3f3f3 40%,  
-    #dcdcdc 100%);
-
-    color:#111;
-    overflow-x:hidden;
-}
-
-/* ========================= */
-/* HEADER */
-/* ========================= */
-
-header{
-
-    background:
-    linear-gradient(to bottom,
-    rgba(255,255,255,0.98),
-    rgba(235,235,235,0.95));
-
-    border-bottom:1px solid rgba(0,0,0,0.08);
-
-    padding:45px 20px 30px;
-
-    text-align:center;
-}
-
-/* ========================= */
-/* LOGO */
-/* ========================= */
-
-.hana-logo{
-
-    width:120px;
-    height:120px;
-
-    object-fit:contain;
-
-    margin-bottom:18px;
-
-    filter:
-    drop-shadow(0 0 8px rgba(0,0,0,0.15));
-}
-
-/*
-
-CAMBIAR LOGO:
-
-src="TU-LOGO.png"
-
-*/
-
-/* ========================= */
-/* TITULO */
-/* ========================= */
-
-h1{
-
-    margin:0;
-
-    font-size:38px;
-
-    letter-spacing:6px;
-
-    font-weight:900;
-
-    color:#111;
-}
-
-.linea{
-
-    width:420px;
-    height:1px;
-
-    background:
-    linear-gradient(to right,
-    transparent,
-    rgba(0,0,0,0.4),
-    transparent);
-
-    margin:22px auto;
-}
-
-.frase{
-
-    color:#444;
-
-    letter-spacing:2px;
-
-    font-size:14px;
-}
-
-/* ========================= */
-/* BOTONES */
-/* ========================= */
-
-.network-links{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
-    margin-top:30px;
-}
-
-.network-btn{
-
-    padding:12px 22px;
-
-    border:1px solid rgba(0,0,0,0.15);
-
-    background:
-    linear-gradient(to bottom,
-    #ffffff,
-    #dcdcdc);
-
-    color:#111;
-
-    cursor:pointer;
-
-    letter-spacing:2px;
-
-    font-size:12px;
-
-    transition:0.3s;
-}
-
-.network-btn:hover{
-
-    transform:translateY(-3px);
-
-    background:
-    linear-gradient(to bottom,
-    #ffffff,
-    #cfcfcf);
-
-    box-shadow:
-    0 0 12px rgba(0,0,0,0.08);
-}
-
-/* ========================= */
-/* CONTENEDOR */
-/* ========================= */
-
-.container{
-
-    width:92%;
-    max-width:1450px;
-
-    margin:auto;
-
-    padding-top:70px;
-    padding-bottom:120px;
-}
-
-/* ========================= */
-/* RANGOS */
-/* ========================= */
-
-.rango{
-    margin-bottom:90px;
-}
-
-.rango h2{
-
-    color:#111;
-
-    font-size:30px;
-
-    letter-spacing:5px;
-
-    margin-bottom:12px;
-}
-
-.rango-line{
-
-    width:100%;
-    height:1px;
-
-    background:
-    linear-gradient(to right,
-    rgba(0,0,0,0.3),
-    transparent);
-
-    margin-bottom:28px;
-}
-
-/* ========================= */
-/* GRID */
-/* ========================= */
-
-.misiones{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
-
-    gap:24px;
-}
-
-/* ========================= */
-/* TARJETAS */
-/* ========================= */
-
-.mision{
-
-    background:
-    linear-gradient(to bottom,
-    rgba(255,255,255,0.98),
-    rgba(225,225,225,0.95));
-
-    border:1px solid rgba(0,0,0,0.08);
-
-    overflow:hidden;
-
-    transition:0.3s;
-}
-
-.mision:hover{
-
-    transform:translateY(-5px);
-
-    box-shadow:
-    0 0 15px rgba(0,0,0,0.08);
-}
-
-/* ========================= */
-/* IMAGEN */
-/* ========================= */
-
-.imagen{
-
-    width:100%;
-    height:150px;
-
-    background:
-    linear-gradient(135deg,
-    #777,
-    #2a2a2a);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    color:#ddd;
-
-    font-size:13px;
-
-    letter-spacing:2px;
-}
-
-/* ========================= */
-/* CONTENIDO */
-/* ========================= */
-
-.contenido{
-    padding:20px;
-}
-
-.mision h3{
-
-    margin-top:0;
-
-    font-size:20px;
-
-    letter-spacing:1px;
-
-    color:#111;
-}
-
-.paga{
-
-    margin-top:10px;
-    margin-bottom:14px;
-
-    font-size:18px;
-
-    font-weight:bold;
-
-    color:#222;
-}
-
-.descripcion{
-
-    color:#444;
-
-    line-height:1.5;
-
-    font-size:13px;
-
-    margin-bottom:18px;
-}
-
-/* ========================= */
-/* INFO */
-/* ========================= */
-
-.info{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:18px;
-}
-
-.rank{
-
-    background:#111;
-
-    color:white;
-
-    padding:5px 10px;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-}
-
-.estado{
-
-    color:#555;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-}
-
-/* ========================= */
-/* BOTON */
-/* ========================= */
-
-.boton{
-
-    width:100%;
-
-    padding:12px;
-
-    border:none;
-
-    background:
-    linear-gradient(to right,
-    #111,
-    #333);
-
-    color:white;
-
-    letter-spacing:2px;
-
-    font-size:11px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.boton:hover{
-
-    background:
-    linear-gradient(to right,
-    #000,
-    #444);
-
-    letter-spacing:3px;
-}
-
-.boton.bloqueado{
-
-    background:#777;
-
-    cursor:not-allowed;
-
-    opacity:0.7;
-}
-
-/* ========================= */
-/* RESPONSIVE */
-/* ========================= */
-
-@media(max-width:700px){
-
-    h1{
-        font-size:28px;
-    }
-
-    .linea{
-        width:80%;
-    }
-
-}
-
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hana Association — Tablón de Misiones</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
+<!-- ============================================================
+     DECORATIVE WATERMARKS
+     ============================================================ -->
+<!-- Number "1" watermark (Hana = "one" in Korean) -->
+<div class="hana-watermark center">1</div>
 
-<!-- LOGO -->
+<!-- Corner trigrams -->
+<div class="hana-watermark-corner tl">☰</div>
+<div class="hana-watermark-corner tr">☷</div>
+<div class="hana-watermark-corner bl">☵</div>
+<div class="hana-watermark-corner br">☲</div>
 
-<img class="hana-logo"
-src="https://limbuscompany.wiki.gg/images/Hana_Logo.png?d142ca">
-
-<h1>HANA ASSOCIATION NETWORK</h1>
-
-<div class="linea"></div>
-
-<div class="frase">
-“Distribución oficial de Solicitudes y Misiones.”
-</div>
-
-<div class="linea"></div>
-
-<!-- BOTONES -->
-
-<button class="network-btn"
-onclick="window.location.href='https://ogurirz.github.io/Liu-Misiones/'">
-🔥 LIU
-</button>
-
-<button class="network-btn"
-onclick="window.location.href='https://ogurirz.github.io/Thumb-Misiones/'">
-🩸 THUMB
-</button>
-
-<button class="network-btn"
-onclick="window.location.href='https://ogurirz.github.io/Index-Misiones/'">
-📜 INDEX
-</button>
-
-</div>
-
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="hana-header">
+  <div class="hana-header-inner">
+    <a class="hana-logo-link" href="#">
+      <img class="hana-logo-img"
+        src="https://limbuscompany.wiki.gg/images/Hana_Logo.png"
+        alt="Hana Association Logo">
+      <div class="hana-title-group">
+        <span class="hana-title">Hana Association</span>
+        <span class="hana-subtitle">Red de Distribución de Misiones</span>
+      </div>
+    </a>
+    <div class="hana-header-id">
+      <button type="button" id="fixerToggleBtn" class="hana-id-btn" title="Consultar Fixer ID">⬟ ID</button>
+    </div>
+    <nav class="hana-header-nav">
+      <a class="hana-nav-btn" href="https://ogurirz.github.io/Liu-Misiones/" target="_blank">🔥 Liu</a>
+      <a class="hana-nav-btn" href="https://ogurirz.github.io/Thumb-Misiones/" target="_blank">🩸 Thumb</a>
+      <a class="hana-nav-btn" href="https://ogurirz.github.io/Index-Misiones/" target="_blank">📜 Index</a>
+    </nav>
+  </div>
 </header>
 
-<div class="container">
-
-<!-- ====================================================== -->
-<!-- RUMOR -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>RUMOR</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<!-- ========= MISIÓN 1 ========= -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://pestraker.shop/wp-content/uploads/2022/06/control-de-ratas.jpg');
-background-size:cover;
-background-position:center;
-">
-</div>
-
-<div class="contenido">
-
-<h3>
-Ratas 
-</h3>
-
-<div class="paga">
-2.000 Ahns
-</div>
-
-<div class="descripcion">
-
-Unas Ratas En O Corp Estan Causando Problemas 
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-RUMOR
-</div>
-
-<div class="estado">
-ABIERTO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<!-- ========= MISIÓN 2 ========= -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-Pandilleros Ting Tang
-</h3>
-
-<div class="paga">
-10.000 Ahns
-</div>
-
-<div class="descripcion">
-
-Estos Individuos en las Callejuelas de J Corp estan causando problemas, es el mejor momento para acabarlos ya que su jefe no se encuentra
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-RUMOR
-</div>
-
-<div class="estado">
-Abierto
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<!-- ========= MISIÓN 3 ========= -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-Axe Gang
-</h3>
-
-<div class="paga">
-65.000 Ahns
-</div>
-
-<div class="descripcion">
-
-Esta banda esta ganando mas terreno en las callejuelas de L / N / W Corp, encarguense antes de que sigan expandiendose
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-RUMOR - MITO URBANO
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<!-- ========= MISIÓN 4 ========= -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://images.steamusercontent.com/ugc/2312097413006329998/50263D2B47806108D196346455451F8AA7CD29BB/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-Twin Hooks
-</h3>
-
-<div class="paga">
-40.000 Ahns por cada Twin Hook Eliminado
-</div>
-
-<div class="descripcion">
-
-Estos Piratas de U Corp parece que se duplican cada segundo, son una plaga que debe ser exterminada cuanto antes
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-RUMOR
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- ====================================================== -->
-<!-- MITO URBANO -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>MITO URBANO</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<!-- COPIAR/PEGAR MISIONES -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://static.wikia.nocookie.net/library-of-ruina/images/2/21/Pierre%27sBistroIcon.png/revision/latest/scale-to-width-down/142?cb=20240604021525');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-Canibales
-</h3>
-
-<div class="paga">
-225.000 Ahns
-</div>
-
-<div class="descripcion">
-
-Canibales en las Callejuelas de W corp andan secuestrando gente para volverla en sus platillos
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-MITO
-</div>
-
-<div class="estado">
-ABIERTO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('https://limbuscompany.wiki.gg/images/thumb/Placeholder_Identity_Full.png/498px-Placeholder_Identity_Full.png?777672');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-Cadenas Oxidadas
-</h3>
-
-<div class="paga">
-300.000 Ahns
-</div>
-
-<div class="descripcion">
-
-Este Grupo de Sindicalistas Estan Causando Estragos en I Corp, Encarguense de ponerlos en su lugar
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-MITO
-</div>
-
-<div class="estado">
-ABIERTO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-MITO
-</div>
-
-<div class="estado">
-ABIERTO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-MITO
-</div>
-
-<div class="estado">
-CLASIFICADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- ====================================================== -->
-<!-- LEYENDA -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>LEYENDA URBANA</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<!-- PUEDES COPIAR Y PEGAR MÁS -->
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-  
-LEYENDA
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-LEYENDA
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-LEYENDA
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-LEYENDA
-</div>
-
-<div class="estado">
-URGENTE
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- ====================================================== -->
-<!-- PLAGA -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>PLAGA URBANA</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PLAGA
-</div>
-
-<div class="estado">
-SELLADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PLAGA
-</div>
-
-<div class="estado">
-SELLADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PLAGA
-</div>
-
-<div class="estado">
-SELLADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PLAGA
-</div>
-
-<div class="estado">
-SELLADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- ====================================================== -->
-<!-- PESADILLA -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>PESADILLA URBANA</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PESADILLA
-</div>
-
-<div class="estado">
-CLASIFICADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PESADILLA
-</div>
-
-<div class="estado">
-CLASIFICADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PESADILLA
-</div>
-
-<div class="estado">
-CLASIFICADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-PESADILLA
-</div>
-
-<div class="estado">
-CLASIFICADO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  
-</div>
-</section>
-
-<!-- ====================================================== -->
-<!-- ESTRELLA -->
-<!-- ====================================================== -->
-
-<section class="rango">
-
-<h2>ESTRELLA DE LA CIUDAD</h2>
-
-<div class="rango-line"></div>
-
-<div class="misiones">
-
-<div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-ESTRELLA
-</div>
-
-<div class="estado">
-RESTRINGIDO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-ESTRELLA
-</div>
-
-<div class="estado">
-RESTRINGIDO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-ESTRELLA
-</div>
-
-<div class="estado">
-RESTRINGIDO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-  <div class="mision">
-
-<div class="imagen"
-
-style="
-background-image:url('IMAGEN-AQUI.png');
-background-size:cover;
-background-position:center;
-">
-
-</div>
-
-<div class="contenido">
-
-<h3>
-En Proceso
-</h3>
-
-<div class="paga">
-En Proceso
-</div>
-
-<div class="descripcion">
-
-En Proceso
-
-</div>
-
-<div class="info">
-
-<div class="rank">
-ESTRELLA
-</div>
-
-<div class="estado">
-RESTRINGIDO
-</div>
-
-</div>
-
-<button class="boton"
-onclick="tomarMision(this)">
-TOMAR MISIÓN
-</button>
-
-</div>
-</div>
-
-</div>
-</section>
-
-</div>
-
-<script>
-
-function tomarMision(btn){
-
-    btn.innerText = "MISIÓN TOMADA";
-
-    btn.classList.add("bloqueado");
-
-    btn.disabled = true;
-
-}
-
-</script>
-</script>
-
-<!-- PEGAS LA MUSICA ACA -->
-
-<iframe id="musicPlayer"
-width="0"
-height="0"
-src=""
-frameborder="0"
-allow="autoplay">
-</iframe>
-
-<script>
-
-let musicaIniciada = false;
-
-document.addEventListener("click", () => {
-
-    if (!musicaIniciada) {
-
-        document.getElementById("musicPlayer").src =
-        "https://www.youtube.com/embed/eXyNitTVHxg?autoplay=1&loop=1&playlist=eXyNitTVHxg";
-
-        musicaIniciada = true;
-    }
-
-});
-
-</script>
+<!-- ============================================================
+     MAIN CONTENT
+     ============================================================ -->
+<main class="hana-main">
+
+  <!-- =========================
+       HERO — con sello de autoridad
+       ========================= -->
+  <section class="hana-hero">
+    <div class="hana-hero-trigrams">
+      <span class="tl">☰</span>
+      <span class="tr">☷</span>
+      <span class="bl">☵</span>
+      <span class="br">☲</span>
+    </div>
+
+    <img class="hana-hero-icon"
+      src="https://libraryofruina.wiki.gg/images/HanaAssociationIcon.png"
+      alt="Hana Association Icon">
+    <h1>Hana Association Network</h1>
+    <div class="hana-hero-underline"></div>
+    <div class="hana-hero-sub">“Distribución oficial de Solicitudes y Misiones.”</div>
+    <div class="hana-hero-stats">
+      <span class="stat-item">
+        En Progreso: <span class="stat-num" id="enProgresoCount">0</span>
+      </span>
+      <span class="stat-item">
+        Completadas: <span class="stat-num gold" id="completadasCount">0</span>
+      </span>
+      <span class="stat-item">
+        <span style="font-size:14px">Rumor → Estrella</span>
+      </span>
+    </div>
+    <div class="hana-stamp">
+      <div class="stamp-inner">
+        <span>☰</span>
+        <span>AUTHORIZED</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEARCH & FILTER
+       ============================================================ -->
+  <section class="hana-search-section">
+    <div class="hana-search-bar">
+      <input type="text" id="searchInput" class="hana-search-input" placeholder="Buscar misiones…" autocomplete="off">
+      <div class="hana-filter-ranks">
+        <button class="hana-filter-btn active" data-filter="all">Todas</button>
+        <button class="hana-filter-btn" data-filter="rumor">Rumor</button>
+        <button class="hana-filter-btn" data-filter="mito">Mito</button>
+        <button class="hana-filter-btn" data-filter="leyenda">Leyenda</button>
+        <button class="hana-filter-btn" data-filter="plaga">Plaga</button>
+        <button class="hana-filter-btn" data-filter="pesadilla">Pesadilla</button>
+        <button class="hana-filter-btn" data-filter="estrella">Estrella</button>
+      </div>
+    </div>
+    <button class="hana-reset-btn" id="resetBtn" title="Reiniciar todas las misiones">✕ Reiniciar todo</button>
+  </section>
+
+  <!-- ============================================================
+       RUMOR
+       ============================================================ -->
+  <section class="rango" data-rango="rumor">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/e/e0/GeonIcon.png" alt="☰">
+        <h2>Rumor</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-rumor">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="rumor">
+
+      <!-- MISIÓN 1: Ocupación Ilegal -->
+      <div class="mision" data-id="ocupacion">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_Nest_K%27s_Ruined_Streets_1_BG.png"
+            alt="Ocupación Ilegal"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Ocupación Ilegal</h3>
+          <div class="mision-paga">12.000 Ahns</div>
+          <p class="mision-descripcion">O Corp, Distrito 15. Tres ocupantes ilegales han tomado un edificio abandonado y extorsionan a los comerciantes locales. No cuentan con filiación a ningún Sindicato reconocido. Objetivo: desalojar a los ocupantes y restablecer el libre tránsito en el sector.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'ocupacion')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 2: Cobro Ilegal de Peaje -->
+      <div class="mision" data-id="peaje">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_Backstreets_of_District_10_BG.png"
+            alt="Cobro Ilegal"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Cobro Ilegal de Peaje</h3>
+          <div class="mision-paga">35.000 Ahns</div>
+          <p class="mision-descripcion">L Corp, Distrito 12. Fixers Grado 7 sin licencia activa han establecido un punto de cobro ilegal. Tres miembros identificados. Utilizan tácticas de intimidación contra residentes y comerciantes. Objetivo: desarticular el punto de cobro y confiscar el equipo.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'peaje')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 3: Prótesis No Registradas -->
+      <div class="mision" data-id="protesis">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_LCE_Research_Team_Components_Storage_BG.png"
+            alt="Prótesis No Registradas"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Prótesis No Registradas</h3>
+          <div class="mision-paga">45.000 Ahns</div>
+          <p class="mision-descripcion">I Corp, Distrito 9. Tres individuos con prótesis de combate no registradas aterrorizan a los comerciantes locales. El líder porta un brazo mecánico de grado militar, posiblemente de origen R Corp. No pertenecen a ningún Sindicato conocido. Objetivo: desarmar y neutralizar al grupo. Entregar las prótesis incautadas para análisis.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado potencial">⚠ Potencial</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'protesis')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 4: Célula en Muelles -->
+      <div class="mision" data-id="celula">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_Twinhook_Pirates%27_Hideout_BG.png"
+            alt="Célula en Muelles"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Célula en Muelles</h3>
+          <div class="mision-paga">50.000 Ahns</div>
+          <p class="mision-descripcion">U Corp, Distrito 21. Tres Fixers no afiliados operan desde contenedores del puerto realizando extorsiones y secuestros exprés. No cuentan con autorización de Hana. Se desplazan constantemente. Objetivo: desarticular la célula y entregar a los miembros a la oficina de U Corp.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'celula')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: Tráfico de Tejidos -->
+      <div class="mision" data-id="tejidos">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_K_Corp._Laboratory_BG.png"
+            alt="Tráfico de Tejidos"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">🔬 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Tráfico de Tejidos</h3>
+          <div class="mision-paga">20.000 Ahns</div>
+          <p class="mision-descripcion">V Corp, Distrito 22. Un comprador de órganos no registrado opera desde un sótano, adquiriendo tejidos robados. La operación atrae a elementos no deseados al sector. Objetivo: cerrar el punto de compra y confiscar la mercancía. No se requiere eliminación.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'tejidos')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: Localización de Deudor -->
+      <div class="mision" data-id="deudor">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_Casino_1F_BG.png"
+            alt="Localización de Deudor"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">🎲 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Localización de Deudor</h3>
+          <div class="mision-paga">25.000 Ahns</div>
+          <p class="mision-descripcion">J Corp, Distrito 10. Un deudor prófugo de una casa de apuestas se encuentra armado y atrincherado en la zona. Los cobradores locales lo buscan activamente. Objetivo: localizar al sujeto y asegurar su entrega a la oficina de J Corp antes de que se genere un incidente mayor.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'deudor')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: Rastro Manipulado -->
+      <div class="mision" data-id="rastro">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_K_Corp._Laboratory_Modification_Lab_BG.png"
+            alt="Rastro Manipulado"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">🐾 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Rastro Manipulado</h3>
+          <div class="mision-paga">15.000 Ahns</div>
+          <p class="mision-descripcion">T Corp, Distrito 20. Especímenes animales con modificaciones no registradas atacan transeúntes en horarios nocturnos. Los sujetos muestran patrones de movimiento sincronizados y velocidad anormal. Se desconoce el origen de las modificaciones. Objetivo: eliminar o capturar a los especímenes. Se solicita precaución.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado potencial">⚠ Potencial</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'rastro')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: Testigo Desaparecido -->
+      <div class="mision" data-id="testigo">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_K_Corp._Laboratory_Office_BG.png"
+            alt="Testigo Desaparecido"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">📄 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Testigo Desaparecido</h3>
+          <div class="mision-paga">28.000 Ahns</div>
+          <p class="mision-descripcion">K Corp, Distrito 11. Un contacto de Hana ha perdido comunicación. Su última transmisión mencionó irregularidades en un cargamento que no coincide con los registros oficiales de K Corp. Posible desviación de producto controlado. Objetivo: investigar la desaparición y determinar el paradero del contacto.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado potencial">⚠ Potencial</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'testigo')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: Artefacto Anómalo -->
+      <div class="mision" data-id="artefacto">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_Dark_Corners_of_U_Corp._BG.png"
+            alt="Artefacto Anómalo"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">🎵 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Artefacto Anómalo</h3>
+          <div class="mision-paga">22.000 Ahns</div>
+          <p class="mision-descripcion">I Corp, Distrito 9. Un objeto de origen desconocido ha aparecido en la vía pública. Se reportan desapariciones de personas que permanecen cerca del objeto por periodos prolongados. No se ha identificado su naturaleza (posible Singularidad suelta o Distorsión menor). Objetivo: recuperar o destruir el artefacto.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado potencial">⚠ Potencial</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'artefacto')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: Recuperación de Personal -->
+      <div class="mision" data-id="recuperacion">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_LCCB_Transporter_Truck_1_BG.png"
+            alt="Recuperación de Personal"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">⚔️ Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Recuperación de Personal</h3>
+          <div class="mision-paga">35.000 Ahns</div>
+          <p class="mision-descripcion">R Corp, Distrito 18 / N Corp, Distrito 14. Un soldado desertor con entrenamiento especializado se encuentra prófugo en territorio de N Corp. El sujeto porta equipo de grado militar y posiblemente información clasificada. Objetivo: localizar y recuperar al desertor antes de que las autoridades de N Corp lo intercepten. Priorizar la entrega a R Corp.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado potencial">⚠ Potencial</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'recuperacion')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: Cargamento No Declarado -->
+      <div class="mision" data-id="cargamento">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Story_U_Corp._BG.png"
+            alt="Cargamento No Declarado"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">📦 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Cargamento No Declarado</h3>
+          <div class="mision-paga">20.000 Ahns</div>
+          <p class="mision-descripcion">U Corp, Distrito 21. Contenedores sin documentación ingresan a los muelles en horarios no regulados. Los sellos pertenecen a Corporaciones que no operan en el distrito. Posible operación de contrabando. Objetivo: investigar y documentar. No interceptar sin refuerzos.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'cargamento')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: Perturbador en Sector 13 -->
+      <div class="mision" data-id="perturbador">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://limbuscompany.wiki.gg/images/Battle_Darkroom%2C_District_14_BG.png"
+            alt="Perturbador en Sector 13"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">💀 Sin ficha</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge rumor">Rumor</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Perturbador en Sector 13</h3>
+          <div class="mision-paga">15.000 Ahns + Ampolla de K Corp</div>
+          <p class="mision-descripcion">M Corp, Distrito 13. Un individuo no identificado ha establecido un depósito de restos biológicos en un edificio abandonado. La oficina local de M Corp no interviene por falta de violación de Tabú. Se desconocen sus motivaciones. Objetivo: detener al sujeto y asegurar la escena.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-rumor">⬡ RUMOR</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'perturbador')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MITO URBANO
+       ============================================================ -->
+  <section class="rango" data-rango="mito">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/8/8c/GonIcon.png" alt="☷">
+        <h2>Mito Urbano</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-mito">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="mito">
+      <!-- MISIÓN 1: Caníbales -->
+      <div class="mision" data-id="canibales">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://static.wikia.nocookie.net/library-of-ruina/images/2/21/Pierre%27sBistroIcon.png"
+            alt="Pierre's Bistro"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Caníbales</h3>
+          <div class="mision-paga">225.000 Ahns</div>
+          <p class="mision-descripcion">Caníbales en las callejuelas de W Corp andan secuestrando gente para convertirla en sus platillos. El Bistro de Pierre ha sido identificado como el foco.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'canibales')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 2: Cadenas Oxidadas -->
+      <div class="mision" data-id="cadenas">
+        <div class="mision-imagen">
+          <img class="img-bg"
+            src="https://static.wikia.nocookie.net/library-of-ruina/images/5/5b/Rusted_Chains_Icon.png"
+            alt="Rusted Chains"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="img-placeholder" style="display:none">Sin imagen</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">Cadenas Oxidadas</h3>
+          <div class="mision-paga">300.000 Ahns</div>
+          <p class="mision-descripcion">Este grupo de sindicalistas está causando estragos en I Corp. Encárguense de ponerlos en su lugar antes de que la situación se descontrole.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado abierto">Abierto</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'cadenas')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 3: Carnival (placeholder) -->
+      <div class="mision" data-id="carnival">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">El Carnaval</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'carnival')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 4: placeholder -->
+      <div class="mision" data-id="mito-4">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-4')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: mito-5 -->
+      <div class="mision" data-id="mito-5">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-5')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: mito-6 -->
+      <div class="mision" data-id="mito-6">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-6')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: mito-7 -->
+      <div class="mision" data-id="mito-7">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-7')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: mito-8 -->
+      <div class="mision" data-id="mito-8">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-8')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: mito-9 -->
+      <div class="mision" data-id="mito-9">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-9')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: mito-10 -->
+      <div class="mision" data-id="mito-10">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-10')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: mito-11 -->
+      <div class="mision" data-id="mito-11">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-11')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: mito-12 -->
+      <div class="mision" data-id="mito-12">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge mito">Mito</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-mito">⬡ MITO</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'mito-12')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LEYENDA URBANA
+       ============================================================ -->
+  <section class="rango" data-rango="leyenda">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/0/07/GamIcon.png" alt="☵">
+        <h2>Leyenda Urbana</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-leyenda">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="leyenda">
+      <div class="mision" data-id="leyenda-1">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-1')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="leyenda-2">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-2')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="leyenda-3">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-3')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="leyenda-4">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-4')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: leyenda-5 -->
+      <div class="mision" data-id="leyenda-5">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-5')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: leyenda-6 -->
+      <div class="mision" data-id="leyenda-6">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-6')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: leyenda-7 -->
+      <div class="mision" data-id="leyenda-7">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-7')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: leyenda-8 -->
+      <div class="mision" data-id="leyenda-8">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado urgente">Urgente</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-8')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: leyenda-9 -->
+      <div class="mision" data-id="leyenda-9">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-9')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: leyenda-10 -->
+      <div class="mision" data-id="leyenda-10">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-10')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: leyenda-11 -->
+      <div class="mision" data-id="leyenda-11">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-11')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: leyenda-12 -->
+      <div class="mision" data-id="leyenda-12">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge legend">Leyenda</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-legend">⬡ LEYENDA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'leyenda-12')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLAGA URBANA
+       ============================================================ -->
+  <section class="rango" data-rango="plaga">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/6/6f/RiIcon.png" alt="☲">
+        <h2>Plaga Urbana</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-plaga">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="plaga">
+      <div class="mision" data-id="plaga-1">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-1')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="plaga-2">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-2')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="plaga-3">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-3')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="plaga-4">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-4')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: plaga-5 -->
+      <div class="mision" data-id="plaga-5">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-5')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: plaga-6 -->
+      <div class="mision" data-id="plaga-6">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-6')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: plaga-7 -->
+      <div class="mision" data-id="plaga-7">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-7')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: plaga-8 -->
+      <div class="mision" data-id="plaga-8">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado sellado">Sellado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-8')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: plaga-9 -->
+      <div class="mision" data-id="plaga-9">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-9')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: plaga-10 -->
+      <div class="mision" data-id="plaga-10">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-10')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: plaga-11 -->
+      <div class="mision" data-id="plaga-11">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-11')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: plaga-12 -->
+      <div class="mision" data-id="plaga-12">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge plaga">Plaga</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-plaga">⬡ PLAGA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'plaga-12')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PESADILLA URBANA
+       ============================================================ -->
+  <section class="rango" data-rango="pesadilla">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/e/e0/GeonIcon.png" alt="☰">
+        <h2>Pesadilla Urbana</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-pesadilla">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="pesadilla">
+      <div class="mision" data-id="pesadilla-1">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-1')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="pesadilla-2">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-2')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="pesadilla-3">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-3')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="pesadilla-4">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-4')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: pesadilla-5 -->
+      <div class="mision" data-id="pesadilla-5">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-5')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: pesadilla-6 -->
+      <div class="mision" data-id="pesadilla-6">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-6')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: pesadilla-7 -->
+      <div class="mision" data-id="pesadilla-7">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-7')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: pesadilla-8 -->
+      <div class="mision" data-id="pesadilla-8">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-8')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: pesadilla-9 -->
+      <div class="mision" data-id="pesadilla-9">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-9')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: pesadilla-10 -->
+      <div class="mision" data-id="pesadilla-10">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-10')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: pesadilla-11 -->
+      <div class="mision" data-id="pesadilla-11">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-11')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: pesadilla-12 -->
+      <div class="mision" data-id="pesadilla-12">
+        <div class="mision-imagen">
+          <div class="img-placeholder">🔮 En proceso</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge pesadilla">Pesadilla</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">En proceso — Se reportará información adicional próximamente.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-pesadilla">⬡ PESADILLA</span>
+            <span class="mision-estado clasificado">Clasificado</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'pesadilla-12')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ESTRELLA DE LA CIUDAD
+       ============================================================ -->
+  <section class="rango" data-rango="estrella">
+    <div class="rango-header">
+      <div class="rango-header-left">
+        <img class="rango-trigram" src="https://libraryofruina.wiki.gg/images/8/8c/GonIcon.png" alt="☷">
+        <h2>Estrella de la Ciudad</h2>
+        <span class="rango-count">(12 misiones)</span>
+      </div>
+      <span class="rango-progress" id="prog-estrella">0/12</span>
+      <span class="rango-collapse-icon">▾</span>
+    </div>
+    <div class="rango-line"></div>
+    <div class="misiones" data-rango="estrella">
+      <div class="mision" data-id="estrella-1">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-1')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="estrella-2">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-2')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="estrella-3">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-3')">Tomar Misión</button>
+        </div>
+      </div>
+      <div class="mision" data-id="estrella-4">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-4')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 5: estrella-5 -->
+      <div class="mision" data-id="estrella-5">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-5')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 6: estrella-6 -->
+      <div class="mision" data-id="estrella-6">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-6')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 7: estrella-7 -->
+      <div class="mision" data-id="estrella-7">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-7')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 8: estrella-8 -->
+      <div class="mision" data-id="estrella-8">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-8')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 9: estrella-9 -->
+      <div class="mision" data-id="estrella-9">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-9')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 10: estrella-10 -->
+      <div class="mision" data-id="estrella-10">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-10')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 11: estrella-11 -->
+      <div class="mision" data-id="estrella-11">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-11')">Tomar Misión</button>
+        </div>
+      </div>
+
+      <!-- MISIÓN 12: estrella-12 -->
+      <div class="mision" data-id="estrella-12">
+        <div class="mision-imagen">
+          <div class="img-placeholder">⭐ Clasificado</div>
+          <div class="img-overlay"></div>
+          <div class="img-badge estrella">Estrella</div>
+        </div>
+        <div class="mision-contenido">
+          <h3 class="mision-titulo">En Proceso</h3>
+          <div class="mision-paga">En proceso</div>
+          <p class="mision-descripcion">Clasificado — Solo Fixers de rango superior pueden acceder a esta información.</p>
+          <div class="mision-info">
+            <span class="mision-rank rank-estrella">⬡ ESTRELLA</span>
+            <span class="mision-estado restringido">Restringido</span>
+          </div>
+          <button class="mision-boton" onclick="tomarMision(this, 'estrella-12')">Tomar Misión</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     BACKGROUND MUSIC (hidden audio)
+     ============================================================ -->
+<audio id="bgmAudio" loop preload="auto" style="display:none">
+  <source src="assets/tiphereth-story.m4a" type="audio/mp4">
+</audio>
+
+<!-- Music control floating button -->
+<div class="hana-music-ctrl" id="musicCtrl" title="Alternar música">
+  <span class="music-icon" id="musicIcon">♪</span>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="hana-footer">
+  <div class="footer-trigrams">
+    <img src="https://libraryofruina.wiki.gg/images/e/e0/GeonIcon.png" alt="☰">
+    <img src="https://libraryofruina.wiki.gg/images/8/8c/GonIcon.png" alt="☷">
+    <img src="https://libraryofruina.wiki.gg/images/0/07/GamIcon.png" alt="☵">
+    <img src="https://libraryofruina.wiki.gg/images/6/6f/RiIcon.png" alt="☲">
+  </div>
+  <div class="footer-text">
+    <strong>Hana Association</strong> — Red de Distribución de Misiones
+  </div>
+  <div class="footer-text" style="margin-top:4px;font-size:10px;color:var(--hana-gray5);letter-spacing:1px">
+    “Concentración y resolución en todas las situaciones.”
+  </div>
+</footer>
+
+<!-- ============================================================
+     CONFIRMATION MODAL
+     ============================================================ -->
+<div class="hana-modal" id="confirmModal">
+  <div class="hana-modal-backdrop" onclick="cancelarConfirmacion()"></div>
+  <div class="hana-modal-box">
+    <div class="hana-modal-trigrams">☰ ☷ ☵ ☲</div>
+    <div class="hana-modal-titulo">Confirmar Finalización</div>
+    <div class="hana-modal-msg" id="confirmMsg"></div>
+    <div class="hana-modal-actions">
+      <button class="hana-modal-btn cancel" onclick="cancelarConfirmacion()">Cancelar</button>
+      <button class="hana-modal-btn confirm" onclick="confirmarCompletar()">✓ Completar Misión</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     TOAST
+     ============================================================ -->
+<div class="hana-toast" id="hanaToast"></div>
+
+<!-- ============================================================
+     FIXER ID MODAL — Overlay de consulta
+     ============================================================ -->
+<div class="hana-fixer-modal" id="fixerModal">
+  <div class="hana-fixer-modal-backdrop" id="fixerModalBackdrop"></div>
+  <div class="hana-fixer-modal-box">
+    <button class="hana-fixer-modal-close" id="fixerModalClose" title="Cerrar">✕</button>
+
+    <div class="hana-fixer-header">
+      <span class="hana-fixer-icon">⬟</span>
+      <span class="hana-fixer-title">REGISTRO DE FIXER</span>
+      <span class="hana-fixer-icon">⬟</span>
+    </div>
+    <div class="hana-fixer-subtitle">SISTEMA DE IDENTIFICACIÓN OFICIAL — HANA ASSOCIATION</div>
+
+    <div class="hana-fixer-console">
+      <div class="hana-fixer-input-group">
+        <span class="hana-fixer-prompt">FIXER ID ❯</span>
+        <input type="text" id="fixerIdInput" class="hana-fixer-input" placeholder="Ingrese código…" maxlength="20" autocomplete="off">
+        <button class="hana-fixer-consult-btn" id="fixerConsultBtn">◈ CONSULTAR</button>
+      </div>
+      <div class="hana-fixer-error" id="fixerError"></div>
+    </div>
+
+    <!-- Fixer Document Card -->
+    <div class="hana-fixer-document" id="fixerDocument" style="display:none">
+      <div class="fid-watermark">HANA</div>
+
+      <div class="fid-topbar">
+        <span class="fid-topbar-trigrams">☰ ☷ ☵ ☲</span>
+        <span class="fid-topbar-title">FIXER LICENSE</span>
+        <span class="fid-topbar-trigrams">☲ ☵ ☷ ☰</span>
+      </div>
+      <div class="fid-gold-line"></div>
+
+      <div class="fid-body">
+        <div class="fid-left">
+          <div class="fid-photo" id="fixerPhoto">
+            <span class="fid-photo-placeholder">☰</span>
+          </div>
+          <div class="fid-id-display">
+            <span class="fid-id-label">ID</span>
+            <span class="fid-id-value" id="fixerIdDisplay">---</span>
+          </div>
+        </div>
+        <div class="fid-right">
+          <div class="fid-field">
+            <span class="fid-field-label">NOMBRE</span>
+            <span class="fid-field-value" id="fixerName">---</span>
+          </div>
+          <div class="fid-field">
+            <span class="fid-field-label">GRADO</span>
+            <span class="fid-field-value" id="fixerGrade">---</span>
+          </div>
+          <div class="fid-field">
+            <span class="fid-field-label">ASOCIACIÓN / OFICINA</span>
+            <span class="fid-field-value" id="fixerAssociation">---</span>
+          </div>
+          <div class="fid-field">
+            <span class="fid-field-label">ESPECIALIDAD</span>
+            <span class="fid-field-value" id="fixerSpecialization">---</span>
+          </div>
+          <div class="fid-field">
+            <span class="fid-field-label">ESTADO</span>
+            <span class="fid-field-value" id="fixerStatus">---</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fid-gold-line"></div>
+
+      <div class="fid-description">
+        <div class="fid-section-label">DESCRIPCIÓN</div>
+        <p id="fixerDescription"></p>
+      </div>
+
+      <div class="fid-extra">
+        <div class="fid-extra-col">
+          <div class="fid-section-label">NOTAS</div>
+          <p id="fixerNotes"></p>
+        </div>
+        <div class="fid-extra-col">
+          <div class="fid-section-label">OBSERVACIONES</div>
+          <p id="fixerObservations"></p>
+        </div>
+      </div>
+
+      <div class="fid-gold-line"></div>
+
+      <div class="fid-footer">
+        <div class="fid-footer-seal">
+          <span>☰</span>
+          <span>AUTHORIZED</span>
+          <span>☲</span>
+        </div>
+        <div class="fid-footer-valid">
+          <span class="fid-status-dot"></span>
+          LICENCIA ACTIVA
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT — Módulos
+     ============================================================ -->
+<script src="js/hana-state.js"></script>
+<script src="js/hana-missions.js"></script>
+<script src="js/hana-ui.js"></script>
+<script src="js/hana-filters.js"></script>
+<script src="js/hana-effects.js"></script>
+<script src="js/hana-audio.js"></script>
+<script src="js/hana-app.js"></script>
+<script src="js/hana-fixerid.js"></script>
 
 </body>
 </html>
-
