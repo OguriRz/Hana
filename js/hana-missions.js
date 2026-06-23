@@ -64,6 +64,7 @@
       if (HanaApp.mostrarToast) HanaApp.mostrarToast('🔄 Todas las misiones han sido reiniciadas');
       if (HanaApp.actualizarEstadisticas) HanaApp.actualizarEstadisticas();
       if (HanaApp.actualizarProgresoRangos) HanaApp.actualizarProgresoRangos();
+      if (HanaApp.actualizarBloqueos) HanaApp.actualizarBloqueos();
       return;
     }
 
@@ -76,6 +77,7 @@
     if (HanaApp.mostrarToast) HanaApp.mostrarToast('✅ Misión completada — ¡Buen trabajo!');
     if (HanaApp.actualizarEstadisticas) HanaApp.actualizarEstadisticas();
     if (HanaApp.actualizarProgresoRangos) HanaApp.actualizarProgresoRangos();
+    if (HanaApp.actualizarBloqueos) HanaApp.actualizarBloqueos();
   };
 
   // ============================================================
@@ -83,6 +85,15 @@
   // ============================================================
   window.tomarMision = function(btn, id) {
     if (HanaApp.state[id] === 'completed') return;
+
+    // Check if the mission's rank is unlocked
+    var card = document.querySelector('.mision[data-id="' + id + '"]');
+    var rango = card ? card.closest('.rango') : null;
+    var rangoName = rango ? rango.getAttribute('data-rango') : '';
+    if (rangoName && !HanaApp.isRangoUnlocked(rangoName) && HanaApp.state[id] !== 'taken') {
+      if (HanaApp.mostrarToast) HanaApp.mostrarToast('🔒 Rango bloqueado — Completa más misiones del nivel anterior');
+      return;
+    }
 
     if (HanaApp.state[id] === 'taken') {
       resetModalUI();
@@ -101,6 +112,7 @@
     if (HanaApp.mostrarToast) HanaApp.mostrarToast('✅ Misión asignada correctamente');
     if (HanaApp.actualizarEstadisticas) HanaApp.actualizarEstadisticas();
     if (HanaApp.actualizarProgresoRangos) HanaApp.actualizarProgresoRangos();
+    if (HanaApp.actualizarBloqueos) HanaApp.actualizarBloqueos();
   };
 
   // ============================================================

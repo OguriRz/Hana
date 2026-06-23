@@ -15,6 +15,21 @@
     });
     if (HanaApp.actualizarEstadisticas) HanaApp.actualizarEstadisticas();
     if (HanaApp.actualizarProgresoRangos) HanaApp.actualizarProgresoRangos();
+
+    // Inicializar sistema de desbloqueo de rangos
+    if (HanaApp.actualizarBloqueos) {
+      HanaApp.actualizarBloqueos();
+      // Call again after fonts & animations settle
+      setTimeout(HanaApp.actualizarBloqueos, 500);
+    }
+
+    // Inicializar descripciones expandibles
+    if (HanaApp.initExpandableDescs) {
+      // Call immediately after DOM layout
+      HanaApp.initExpandableDescs();
+      // Call again after fonts & animations settle
+      setTimeout(HanaApp.initExpandableDescs, 500);
+    }
   })();
 
   // ============================================================

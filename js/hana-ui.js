@@ -64,6 +64,89 @@
   }
 
   // ============================================================
+  // RANK UNLOCK — Lock indicators & visual state
+  // ============================================================
+  function actualizarBloqueos() {
+    var prevCompletadas = 0;
+
+    HanaApp.RANK_ORDER.forEach(function(rangoName, index) {
+      var rango = document.querySelector('.rango[data-rango="' + rangoName + '"]');
+      if (!rango) return;
+
+      if (index === 0) {
+        // Rumor siempre desbloqueado
+        rango.classList.remove('rango-locked');
+        prevCompletadas = HanaApp.contarCompletadasEnRango(rangoName);
+        actualizarLockIndicator(rango, true, 0);
+        return;
+      }
+
+      var unlocked = prevCompletadas >= HanaApp.RANK_UNLOCK_REQUIRE;
+      var faltan = Math.max(0, HanaApp.RANK_UNLOCK_REQUIRE - prevCompletadas);
+
+      if (unlocked) {
+        rango.classList.remove('rango-locked');
+      } else {
+        rango.classList.add('rango-locked');
+      }
+
+      actualizarLockIndicator(rango, unlocked, faltan);
+
+      // Recalcular completadas del rango actual para el siguiente
+      prevCompletadas = HanaApp.contarCompletadasEnRango(rangoName);
+    });
+
+    // Also update all mission buttons to reflect lock state
+    document.querySelectorAll('.mision-boton').forEach(function(btn) {
+      var card = btn.closest('.mision');
+      if (!card) return;
+      var rango = card.closest('.rango');
+      if (!rango) return;
+      var rangoName = rango.getAttribute('data-rango');
+      var id = card.getAttribute('data-id');
+
+      if (!HanaApp.isRangoUnlocked(rangoName) && HanaApp.state[id] !== 'taken' && HanaApp.state[id] !== 'completed') {
+        btn.disabled = true;
+        btn.textContent = '🔒 Bloqueado';
+      } else if (HanaApp.state[id] !== 'taken' && HanaApp.state[id] !== 'completed') {
+        btn.disabled = false;
+        btn.textContent = 'Tomar Misión';
+      }
+    });
+  }
+
+  function actualizarLockIndicator(rango, unlocked, faltan) {
+    // Find or create the lock indicator element
+    var indicator = rango.querySelector('.rango-lock-indicator');
+    if (!indicator) {
+      indicator = document.createElement('span');
+      indicator.className = 'rango-lock-indicator';
+      // Prevent click from collapsing the rango section
+      indicator.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
+      var header = rango.querySelector('.rango-header');
+      if (header) {
+        // Insert before the collapse icon (last element)
+        var collapseIcon = header.querySelector('.rango-collapse-icon');
+        if (collapseIcon) {
+          header.insertBefore(indicator, collapseIcon);
+        } else {
+          header.appendChild(indicator);
+        }
+      }
+    }
+
+    if (unlocked) {
+      indicator.textContent = '✓ Desbloqueado';
+      indicator.className = 'rango-lock-indicator unlocked';
+    } else {
+      indicator.textContent = '🔒 ' + faltan + '/' + HanaApp.RANK_UNLOCK_REQUIRE;
+      indicator.className = 'rango-lock-indicator locked';
+    }
+  }
+
+  // ============================================================
   // EXPANDABLE DESCRIPTIONS
   // ============================================================
   function initExpandableDescs() {
@@ -93,4 +176,5 @@
   HanaApp.actualizarEstadisticas = actualizarEstadisticas;
   HanaApp.actualizarProgresoRangos = actualizarProgresoRangos;
   HanaApp.initExpandableDescs = initExpandableDescs;
+  HanaApp.actualizarBloqueos = actualizarBloqueos;
 })();

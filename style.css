@@ -1414,6 +1414,80 @@ body::before {
 }
 
 /* =========================
+   RANK LOCK SYSTEM
+   ========================= */
+.rango-locked {
+  position: relative;
+}
+
+.rango-locked .rango-line::after {
+  background: var(--hana-gray4);
+  opacity: 0.6;
+}
+
+.rango-locked .misiones {
+  position: relative;
+}
+
+.rango-locked .misiones::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(242, 242, 242, 0.4);
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 2px;
+}
+
+.rango-locked .mision {
+  opacity: 0.45;
+  filter: grayscale(0.5);
+  pointer-events: none;
+}
+
+.rango-locked .mision.taken,
+.rango-locked .mision.completed {
+  opacity: 0.45;
+  filter: grayscale(0.3);
+}
+
+.rango-locked .mision-boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+  border-color: var(--hana-gray5);
+  color: var(--hana-gray4);
+  background: var(--hana-white2);
+}
+
+.rango-locked .mision-boton:disabled::before,
+.rango-locked .mision-boton:disabled::after {
+  display: none;
+}
+
+.rango-lock-indicator {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  padding: 2px 8px;
+  margin-left: auto;
+  margin-right: 8px;
+  transition: all var(--hana-transition);
+}
+
+.rango-lock-indicator.locked {
+  color: var(--hana-gray4);
+  border: 1px solid var(--hana-gray6);
+  background: transparent;
+}
+
+.rango-lock-indicator.unlocked {
+  color: var(--hana-success);
+  border: 1px solid rgba(58,138,90,0.15);
+  background: rgba(58,138,90,0.04);
+}
+
+/* =========================
    SCROLL ANIMATIONS
    ========================= */
 .rango {
